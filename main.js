@@ -1,10 +1,24 @@
+window.addEventListener('scroll', onScroll)
+
+onScroll()
 function onScroll() {
+  showNavOnScroll();
+  showBackToTopButtonOnScroll();
+}
+function showNavOnScroll(){
   let nav = document.getElementById('navigation')
   if (scrollY > 0) {
    
     nav.classList.add('scroll')
   } else {
     nav.classList.remove('scroll')
+  }
+}
+function showBackToTopButtonOnScroll(){
+  if(scrollY > 500){
+    backToTopButton.classList.add('show');
+  }else{
+    backToTopButton.classList.remove('show');
   }
 }
 function openMenu(){
@@ -29,3 +43,4 @@ ScrollReveal({
 #about header,
 #about .content
 `);
+
